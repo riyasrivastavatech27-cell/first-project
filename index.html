@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress Bar Animation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f2f2f2;
+}
+
+/* Progress Bar Container */
+.progress-container{
+    width:500px;
+    height:30px;
+    border:2px solid black;
+    border-radius:20px;
+    overflow:hidden;
+    background:white;
+}
+
+/* Progress Bar */
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:limegreen;
+    border-radius:20px;
+    animation:loading 4s forwards,
+              bounce 0.4s ease 4s;
+}
+
+/* Loading Animation */
+@keyframes loading{
+    from{
+        width:0%;
+    }
+
+    to{
+        width:100%;
+    }
+}
+
+/* Bounce Effect */
+@keyframes bounce{
+
+    0%{
+        transform:scaleX(1);
+    }
+
+    50%{
+        transform:scaleX(1.03);
+    }
+
+    100%{
+        transform:scaleX(1);
+    }
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="progress-container">
+    <div class="progress-bar"></div>
+</div>
+
+</body>
+</html>
